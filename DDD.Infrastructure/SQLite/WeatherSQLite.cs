@@ -106,7 +106,7 @@ namespace DDD.Infrastructure.SQLite
             }
             else
             {
-                SQLiteHepler.Execute(insert, args.ToArray(), dbTransaction.);
+                SQLiteHepler.Execute(insert, args.ToArray(), dbTransaction.GetDbTransaction());
             }
         }
     }

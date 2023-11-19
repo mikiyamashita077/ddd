@@ -95,18 +95,7 @@ namespace DDD.Infrastructure.SQLite
 
         internal static void Execute(string sql, DbParameter[] parameters)
         {
-            using (var connetion = new SQLiteConnection(ConnetionString))
-            {
-                using (var command = new SQLiteCommand(sql, connetion))
-                {
-                    connetion.Open();
-                    if (parameters != null)
-                    {
-                        command.Parameters.AddRange(parameters);
-                    }
-                    command.ExecuteNonQuery();
-                }
-            }
+            Execute(sql, null, parameters);
         }
 
         internal static void Execute(string sql, DbParameter[] parameters, DbTransaction dbTransaction)

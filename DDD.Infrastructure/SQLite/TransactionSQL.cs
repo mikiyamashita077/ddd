@@ -13,7 +13,8 @@ namespace DDD.Infrastructure.SQLite
     {
         private DbConnection _connection;
         private DbTransaction _transaction;
-        public TransactionSQL(DbConnection connection)
+        
+        public TransactionSQL(SQLiteConnection connection)
         {
             _connection = connection;
             _connection.Open();
